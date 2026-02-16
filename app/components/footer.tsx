@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Github, Instagram, Mail } from "lucide-react";
+import { Instagram, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -41,9 +41,8 @@ export default function Footer() {
             <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Connect</h3>
             <div className="mt-4 flex gap-2">
               {[
-                { href: "mailto:computerclub@sjny.edu", icon: Mail, label: "Email" },
-                { href: "https://github.com", icon: Github, label: "GitHub" },
-                { href: "https://instagram.com", icon: Instagram, label: "Instagram" },
+                { href: "mailto:bk.computerclub@student.sjny.edu", icon: Mail, label: "Email" },
+                { href: "https://www.instagram.com/sjnycsclub/", icon: Instagram, label: "Instagram" },
               ].map((s) => (
                 <a key={s.label} href={s.href} target={s.href.startsWith("mailto") ? undefined : "_blank"} rel={s.href.startsWith("mailto") ? undefined : "noopener noreferrer"} className="flex h-10 w-10 items-center justify-center rounded-xl text-muted-foreground hover:text-sky hover:bg-sky/10 transition-all" aria-label={s.label}>
                   <s.icon className="h-[18px] w-[18px]" />

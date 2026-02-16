@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: "SJNY Computer Club",
     template: "%s | SJNY Computer Club",
   },
-  description: "St. Joseph's Computer Club — exploring technology, building projects, and growing together.",
+  description: "SJNY Computer Club — exploring technology, building projects, and growing together.",
 };
 
 export default function RootLayout({
