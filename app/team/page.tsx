@@ -8,51 +8,43 @@ export const metadata: Metadata = {
 
 const executives = [
   {
-    name: "President",
+    name: "Suraj Chaudhary",
     role: "President",
     bio: "Leads club operations, organizes meetings, and represents the club to the university administration.",
     links: {},
   },
   {
-    name: "Vice President",
+    name: "Swornima Bhandari",
     role: "Vice President",
     bio: "Assists the president in all duties and steps in when needed. Coordinates between teams.",
     links: {},
   },
   {
-    name: "Secretary",
+    name: "Joella Azar",
     role: "Secretary",
     bio: "Handles communications, meeting notes, and keeps the club organized and on schedule.",
     links: {},
   },
   {
-    name: "Treasurer",
+    name: "Jawad Zaman",
     role: "Treasurer",
     bio: "Manages the club budget, fundraising efforts, and equipment purchases.",
     links: {},
   },
 ];
 
-const leads = [
+const advisors = [
   {
-    name: "Workshop Lead",
-    role: "Workshop Lead",
-    bio: "Plans and runs technical workshops on topics like web dev, Python, and cybersecurity.",
+    name: "Eleni Nicole Zamagias",
+    role: "Teaching Instructor",
+    bio: "Teaching Instructor in Mathematics and Computer Science at SJNY Brooklyn. Specializes in mathematics and computer science education, statistical data science, and regression analysis.",
+    links: {},
   },
   {
-    name: "Event Coordinator",
-    role: "Event Coordinator",
-    bio: "Organizes hackathons, guest speakers, and social events throughout the year.",
-  },
-  {
-    name: "Social Media Manager",
-    role: "Social Media Manager",
-    bio: "Runs the club's Instagram and online presence. Creates flyers and promotional content.",
-  },
-  {
-    name: "Web Developer",
-    role: "Web Developer",
-    bio: "Builds and maintains the club website. Helps members learn web development.",
+    name: "Elizabeth Zollinger, Ph.D.",
+    role: "Associate Chair and Associate Professor",
+    bio: "Associate Chair and Associate Professor of Mathematics and Computer Science. Teaches calculus, differential equations, and statistics. Research interests include celestial mechanics and dynamical systems.",
+    links: {},
   },
 ];
 
@@ -130,9 +122,9 @@ export default function TeamPage() {
       </section>
 
       <section className="mt-16">
-        <h2 className="mb-6 text-2xl font-bold text-foreground">Team Leads</h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {leads.map((member) => (
+        <h2 className="mb-6 text-2xl font-bold text-foreground">Club Advisors</h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+          {advisors.map((member) => (
             <MemberCard key={member.role} member={member} />
           ))}
         </div>
