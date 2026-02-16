@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock, MapPin } from "lucide-react";
 import { events, getEventBySlug } from "../../data/events";
 import Markdown from "../../components/markdown";
+import PhotoGallery from "../../components/photo-gallery";
 
 interface Props { params: Promise<{ slug: string }>; }
 
@@ -49,6 +51,19 @@ export default async function EventDetailPage({ params }: Props) {
         </div>
 
         <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{event.description}</p>
+
+        {event.coverImage && (
+          <div className="mt-8 overflow-hidden rounded-xl">
+            <Image
+              src={event.coverImage}
+              alt={event.title}
+              width={800}
+              height={450}
+              className="w-full h-auto object-cover"
+              priority
+            />
+          </div>
+        )}
       </div>
 
       <div className="my-10 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
@@ -56,6 +71,19 @@ export default async function EventDetailPage({ params }: Props) {
       <div className="animate-fade-up delay-200">
         <Markdown content={event.details} />
       </div>
+
+      {event.photos && event.photos.length > 0 && (
+        <>
+          <div className="my-10 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+          <div className="animate-fade-up delay-300">
+            <h2 className="text-2xl font-bold text-foreground flex items-center gap-3 mb-6">
+              <span className="h-8 w-1 rounded-full bg-gradient-to-b from-sky to-accent" />
+              Photos
+            </h2>
+            <PhotoGallery photos={event.photos} eventTitle={event.title} />
+          </div>
+        </>
+      )}
     </div>
   );
 }

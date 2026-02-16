@@ -53,9 +53,9 @@ export default function Home() {
                 </div>
               </div>
               <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white animate-fade-up delay-100">
-                Computer<br />
+                SJNY<br />
                 <span className="bg-gradient-to-r from-sky via-sky-light to-accent bg-clip-text text-transparent">
-                  Club
+                  Computer Club
                 </span>
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-white/70 max-w-lg animate-fade-up delay-200">
@@ -77,15 +77,18 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="animate-float-slow hidden lg:block">
+            <div className="animate-float-slow flex justify-center lg:block">
               <div className="relative">
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-sky/20 to-accent/20 blur-2xl" />
+                <div className="absolute -inset-20 rounded-full bg-sky/25 blur-[80px]" />
+                <div className="absolute -inset-14 rounded-full bg-sky/20 blur-[50px]" />
+                <div className="absolute -inset-8 rounded-full bg-accent/15 blur-3xl" />
+                <div className="absolute -inset-4 rounded-3xl bg-white/10 blur-2xl" />
                 <Image
                   src="/logo.png"
-                  alt="SJ Computer Club Logo"
+                  alt="SJNY Computer Club Logo"
                   width={320}
                   height={160}
-                  className="relative w-72"
+                  className="relative w-64 sm:w-80 lg:w-[28rem] drop-shadow-[0_0_40px_rgba(56,189,248,0.5)]"
                   priority
                 />
               </div>
@@ -140,16 +143,29 @@ export default function Home() {
               <Link
                 key={event.slug}
                 href={`/events/${event.slug}`}
-                className={`group relative rounded-2xl border border-border bg-card p-6 card-hover gradient-border animate-fade-up delay-${(i + 1) * 100}`}
+                className={`group relative rounded-2xl border border-border bg-card overflow-hidden card-hover gradient-border animate-fade-up delay-${(i + 1) * 100}`}
               >
-                <div className="flex items-center gap-2 text-xs font-semibold text-sky mb-4">
-                  <Calendar className="h-3.5 w-3.5" />
-                  {event.date}
-                </div>
-                <h3 className="text-lg font-semibold text-card-foreground group-hover:text-sky transition-colors">{event.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{event.description}</p>
-                <div className="mt-4 flex items-center gap-1 text-xs font-medium text-sky opacity-0 group-hover:opacity-100 transition-opacity">
-                  Learn more <ArrowRight className="h-3 w-3" />
+                {event.coverImage && (
+                  <div className="w-full aspect-[16/9] overflow-hidden">
+                    <Image
+                      src={event.coverImage}
+                      alt={event.title}
+                      width={400}
+                      height={225}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+                <div className="p-6">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-sky mb-4">
+                    <Calendar className="h-3.5 w-3.5" />
+                    {event.date}
+                  </div>
+                  <h3 className="text-lg font-semibold text-card-foreground group-hover:text-sky transition-colors">{event.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{event.description}</p>
+                  <div className="mt-4 flex items-center gap-1 text-xs font-medium text-sky opacity-0 group-hover:opacity-100 transition-opacity">
+                    Learn more <ArrowRight className="h-3 w-3" />
+                  </div>
                 </div>
               </Link>
             ))}
