@@ -26,10 +26,10 @@ const values = [
 ];
 
 const stats = [
-  { label: "Active Members", value: "30+" },
-  { label: "Events per Year", value: "15+" },
-  { label: "Workshops Held", value: "20+" },
-  { label: "Years Active", value: "2+" },
+  { label: "Active Members", value: "110+" },
+  { label: "Events per Year", value: "8+" },
+  { label: "Workshops Held", value: "10+" },
+  { label: "Years Active", value: "5+" },
 ];
 
 export default function AboutPage() {
@@ -37,7 +37,7 @@ export default function AboutPage() {
     <div className="mx-auto max-w-6xl px-6 py-16">
       <SectionHeader
         title="About Us"
-        description="Learn more about the St. Joseph's University Computer Club — who we are, what we do, and why we do it."
+        description="Learn more about the SJNY University Computer Club — who we are, what we do, and why we do it."
       />
 
       {/* Mission */}
@@ -47,7 +47,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold text-card-foreground">Our Mission</h2>
         </div>
         <p className="text-muted-foreground leading-relaxed max-w-3xl">
-          The St. Joseph&apos;s University Computer Club exists to inspire and equip students with the skills,
+          The SJNY Computer Club exists to inspire and equip students with the skills,
           knowledge, and confidence to thrive in the world of technology. We provide a welcoming
           space for students of all majors to explore programming, computer science concepts, and modern tech
           through hands-on workshops, collaborative projects, and community events.
