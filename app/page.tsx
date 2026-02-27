@@ -138,31 +138,31 @@ export default function Home() {
               View all <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
-          <div className="grid gap-5 sm:grid-cols-3">
+          <div className="flex flex-col gap-6">
             {upcomingEvents.map((event, i) => (
               <Link
                 key={event.slug}
                 href={`/events/${event.slug}`}
-                className={`group relative rounded-2xl border border-border bg-card overflow-hidden card-hover gradient-border animate-fade-up delay-${(i + 1) * 100}`}
+                className={`group relative rounded-2xl border border-border bg-card overflow-hidden card-hover gradient-border animate-fade-up delay-${(i + 1) * 100} flex flex-col md:flex-row`}
               >
                 {event.coverImage && (
-                  <div className="w-full aspect-[16/9] overflow-hidden">
+                  <div className="bg-muted shrink-0 flex items-center justify-center md:border-r border-border md:w-64 w-full">
                     <Image
                       src={event.coverImage}
                       alt={event.title}
-                      width={400}
-                      height={225}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      width={800}
+                      height={450}
+                      className="h-[200px] w-auto max-w-full object-contain shadow-sm group-hover:opacity-90 transition-opacity block"
                     />
                   </div>
                 )}
-                <div className="p-6">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-sky mb-4">
+                <div className="p-6 md:p-8 flex-1 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-sky mb-3">
                     <Calendar className="h-3.5 w-3.5" />
                     {event.date}
                   </div>
-                  <h3 className="text-lg font-semibold text-card-foreground group-hover:text-sky transition-colors">{event.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{event.description}</p>
+                  <h3 className="text-xl font-bold text-card-foreground group-hover:text-sky transition-colors">{event.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-2">{event.description}</p>
                   <div className="mt-4 flex items-center gap-1 text-xs font-medium text-sky opacity-0 group-hover:opacity-100 transition-opacity">
                     Learn more <ArrowRight className="h-3 w-3" />
                   </div>
