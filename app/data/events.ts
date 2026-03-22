@@ -14,6 +14,45 @@ export interface Event {
 
 export const events: Event[] = [
   {
+    slug: "tech-talk-2026",
+    title: "Tech Talk 2026",
+    date: "April 15, 2026",
+    time: "6:00 PM - 8:00 PM",
+    location: "St. Joseph’s University, Brooklyn Campus (Tuohy Hall Auditorium)",
+    description:
+      "Navigating the Modern Tech Landscape: From Code to C-Suite. A panel discussion featuring alumni from different stages and sectors of the tech industry.",
+    details: `**Theme:** Navigating the Modern Tech Landscape: From Code to C-Suite
+
+## The Vision
+The goal of this "Tech Talk" is to move beyond textbook theory and provide Computer Science and Mathematics majors with a realistic look at the industry. By bringing together alumni from different stages and sectors, we aim to show students the wide diversity of career paths available to them.
+
+## The Panelists
+- **Abdoul Barry:** Software Engineer at Bloomberg (SJNY ’21).
+  - Perspective: Large-scale engineering, technical excellence, and early-career growth
+- **Brian Cerra:** Manager of Information Services at EndoSec (SJNY ’25).
+  - Perspective: Rapid advancement from intern to management, IT infrastructure, and the defense/security sector
+- **Dhiraj K. Chaudhary:** Senior Associate Engineer at KKR (SJNY ’22).
+  - Perspective: FinTech, data pipelines, and navigating the industry as an international student (F1 OPT to H1-B transition)
+- **Kevin Deutsch:** Chief Growth Officer at Softheon (SJNY ’14).
+  - Perspective: Executive leadership, the business of technology, and scaling organizations
+- **Christopher Stewart:** Software Engineer 2 at Avalon Healthcare Solutions (SJNY ‘23).
+  - Perspective: Corporate software engineering, healthcare tech, and leveraging high-level internships (Microsoft) for career progression.
+
+## Discussion Roadmap
+The session will be a moderated "fireside chat" style conversation focusing on three key pillars:
+- **Pillar 1: The Transition (SJNY to Industry):** Reflecting on how your time at St. Joseph’s prepared you and what the biggest "culture shocks" were when entering the workforce.
+- **Pillar 2: The Skillset of 2026:** Beyond writing clean code, what makes a candidate stand out today? (e.g., AI literacy, communication, business acumen).
+- **Pillar 3: Growth & Sustainability:** How to navigate a long-term career in an industry that moves as fast as technology.
+
+## Event Agenda
+- **6:00 PM:** Introductions: Welcome by Dr. Elizabeth Zollinger & Speaker intros.
+- **6:15 PM:** Moderated Panel: Focused questions on the three pillars above.
+- **7:00 PM:** Audience Q&A: Open floor for student questions.
+- **7:30 PM:** Closing & Networking: Informal meet-and-greet with students.`,
+    tags: ["Tech Talk", "Career", "Networking", "Panel"],
+    coverImage: "/events/tech-talk-2026/techtalk_horizontal.jpg",
+  },
+  {
     slug: "3d-modeling-workshop",
     title: "3D Modeling Workshop",
     date: "March 3, 2026",
@@ -34,6 +73,7 @@ export const events: Event[] = [
 3.  Practical modeling techniques for beginners.`,
     tags: ["Beginner", "3D Modeling"],
     coverImage: "/events/3d-modeling-workshop/3dModelingWorkshop.jpg",
+    past: true,
   },
   {
     slug: "meet-and-greet-26",
