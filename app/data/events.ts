@@ -14,6 +14,24 @@ export interface Event {
 
 export const events: Event[] = [
   {
+    slug: "meet-and-greet-fall-26",
+    title: "Meet & Greet Fall 2026",
+    date: "September 17, 2026",
+    time: "12:40 PM - 1:10 PM",
+    location: "St. Joseph’s University, Brooklyn Campus (Tuohy Hall Student Lounge)",
+    description:
+      "A casual meet and greet for students to connect with each other and make friends.",
+    details: `Join the SJNY Computer Club for our Fall Meet & Greet!
+
+Recently named the campus's "Most Improved Organization," we’re kicking off the year with free food, our new vision, and a look at the projects we're working on. We aren't here to give you more homework—we’re here to help you build real things.
+
+Come meet the crew, learn about our new "Executive Member" roles, and see how you can get involved. 
+
+No coding experience required. Whether you're a developer, designer, or just curious—stop by!`,
+    tags: ["Meet & Greet", "Friends", "Networking", "Casual"],
+    coverImage: "/events/meet-and-greet-fall-26/meet-and-greet-fall-26.png",
+  },
+  {
     slug: "tech-talk-2026",
     title: "Tech Talk 2026",
     date: "April 15, 2026",
@@ -622,14 +640,75 @@ Students and faculty connected over pizza, mac & cheese, and drinks in a relaxed
   },
 ];
 
+const monthMap: Record<string, number> = {
+  Jan: 0,
+  January: 0,
+  Feb: 1,
+  February: 1,
+  Mar: 2,
+  March: 2,
+  Apr: 3,
+  April: 3,
+  May: 4,
+  Jun: 5,
+  June: 5,
+  Jul: 6,
+  July: 6,
+  Aug: 7,
+  August: 7,
+  Sep: 8,
+  Sept: 8,
+  September: 8,
+  Oct: 9,
+  October: 9,
+  Nov: 10,
+  November: 10,
+  Dec: 11,
+  December: 11,
+};
+
+function parseEventDate(dateText: string): Date {
+  const match = dateText.trim().match(/^([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})$/);
+
+  if (match) {
+    const [, monthName, dayString, yearString] = match;
+    const monthIndex = monthMap[monthName];
+    const day = Number.parseInt(dayString, 10);
+    const year = Number.parseInt(yearString, 10);
+
+    if (monthIndex !== undefined && Number.isInteger(day) && Number.isInteger(year)) {
+      return new Date(year, monthIndex, day);
+    }
+  }
+
+  const parsed = new Date(dateText);
+
+  if (Number.isNaN(parsed.getTime())) {
+    throw new Error(`Invalid event date: "${dateText}"`);
+  }
+
+  return new Date(parsed.getFullYear(), parsed.getMonth(), parsed.getDate());
+}
+
+function isPastEvent(event: Event): boolean {
+  if (event.past === true) {
+    return true;
+  }
+
+  const today = new Date();
+  const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+  return parseEventDate(event.date) < startOfToday;
+}
+
 export function getEventBySlug(slug: string): Event | undefined {
   return events.find((e) => e.slug === slug);
 }
 
 export function getUpcomingEvents(): Event[] {
-  return events.filter((e) => !e.past);
+  return events.filter((event) => !isPastEvent(event));
 }
 
 export function getPastEvents(): Event[] {
-  return events.filter((e) => e.past);
+  return events.filter((event) => isPastEvent(event));
 }

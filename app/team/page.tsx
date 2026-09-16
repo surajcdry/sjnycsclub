@@ -19,27 +19,38 @@ const executives: Member[] = [
   {
     name: "Suraj Chaudhary",
     role: "President",
-    year: "Sophomore",
+    year: "Junior",
     photo: "/team/suraj.jpg",
   },
   {
-    name: "Joella Azar",
+    name: "Alish Pandey",
     role: "Vice President",
     year: "Senior",
-    photo: "/team/joella.jpg",
+    photo: "/team/pandey.jpg",
   },
   {
-    name: "Swornima Bhandari",
+    name: "Saurabh Baral",
     role: "Secretary",
-    year: "Junior",
-    photo: "/team/swornima.jpg",
+    year: "Senior",
+    photo: "/team/baral.jpg",
   },
   {
-    name: "Jawad Zaman",
+    name: "Srijana Shrestha",
     role: "Treasurer",
-    year: "Junior",
-    photo: "/team/jawad.jpg",
+    year: "Senior",
+    photo: "/team/shrestha.jpg",
   },
+  {
+    name: "Rishav Basnet",
+    role: "Executive Member",
+    year: "Senior",
+    photo: "/team/basnet.jpg",
+  },
+  {
+    name: "Could be You?",
+    role: "Executive Member",
+    photo: "/team/apply.jpg",
+  }
 ];
 
 const faculty: Member[] = [
