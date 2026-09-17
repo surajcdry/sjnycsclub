@@ -48,7 +48,7 @@ const executives: Member[] = [
   },
   {
     name: "Could be You?",
-    role: "Executive Member",
+    role: "Scan the QR code",
     photo: "/team/apply.jpg",
   }
 ];
